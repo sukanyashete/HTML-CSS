@@ -1,0 +1,89 @@
+<html>
+	<head>
+		<style> p { text-align:center; } </style>
+		<title> College Library Registeration </title>
+		<script>
+			function validation() {
+				var name = document.forms["RegForm"]["Name"];
+				var email = document.forms["RegForm"]["EMail"];
+				var phone = document.forms["RegForm"]["Telephone"];
+				var what = document.forms["RegForm"]["Subject"];
+				var semester = document.forms["RegForm"]["Semester"];
+				var address = document.forms["RegForm"]["Address"];
+
+				if (name.value == "") {
+					window.alert("Please enter your name.");
+					name.focus();
+					return false;
+				}
+
+				if (address.value == "") {
+					window.alert("Please enter your address.");
+					address.focus();
+					return false;
+				}
+
+				if (email.value == "") {
+					window.alert(
+					"Please enter a valid e-mail address.");
+					email.focus();
+					return false;
+				}
+
+				if (semester.value == "") {
+					window.alert("Please enter your semester");
+					semester.focus();
+					return false;
+				}
+
+				if (what.selectedIndex < 1) {
+					alert("Please enter your department");
+					what.focus();
+					return false;
+				}
+			
+				if (phone.value == "") {
+					window.alert(
+					"Please enter your contact");
+					phone.focus();
+					return false;
+				}
+
+				return true;
+			}
+		</script>
+	</head>
+
+	<body>
+		<h1 style="text-align: center;">REGISTRATION FORM</h1><br>
+		<form name="RegForm" onsubmit="return validation()" method="post"> <p>
+			Name: <input type="text" size="25" name="Name" />
+			<br><br>
+			Address: <input type="text" size="45" name="Address" />
+			<br><br>
+			E-mail Address: <input type="text" size="25" name="EMail" />
+			<br><br>
+			Semester: <input type="text" size="1" name="Semester" /> &nbsp; 
+			Department: 
+				<select type="text" value="" name="Subject">
+					<option>IT</option>
+					<option>CIVIL</option>
+					<option>MECH</option>
+					<option>EEE</option>
+					<option>EC</option>
+				</select>
+			<br><br>
+			Contact: <input type="text" size="10" name="Telephone" />
+			<br />
+			<br />
+				<input type="submit"
+					value="Submit" name="Submit" /> &nbsp;
+				<input type="reset"
+					value="Reset" name="Reset" />
+		</p></form> 
+	</body>
+</html>
+
+
+		
+		
