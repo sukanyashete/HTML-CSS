@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+       <head> 
+	<title> Armstrong Number </title>
+	<style>
+	span{ color: red; }
+	</style>	
+      </head>
+
+      <body>
+	Number: <input type="text" id="num">
+	<input type="button" value="submit" onclick="check()"> <br><br>
+	<span id="result"></span>
+
+	<script>
+	var number = document.getElementById("num");
+	var res = document.getElementById("result");
+	function check(){
+		if ( number.value.length !=  4 ){
+			alert("Enter a four digit number"); 
+			return;
+		}
+		var num = parseInt(number.value);
+		var copy = num;
+		var temp = 0;
+	
+		while( copy != 0 ){
+			temp += (copy % 10)**4 ; 
+			copy = Math.floor(copy/10);
+		}
+
+		if( num == temp){
+			res.innerHTML = "ARMSTRONG NUMBER" ;
+		}else{
+			res.innerHTML = "NOT AN ARMSTRONG NUMBER";
+		}
+	   } 
+	    </script>
+      </body>
+</html>
+
