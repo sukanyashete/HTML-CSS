@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+	
+	<head>
+		<title> Palindrome Number </title>
+		<style> span{ color: red; } </style>
+	</head>
+	
+	<body>
+		Number: <input type="text" id="num">
+		<input type="button" value="submit" onclick="check()"> <br><br>
+		<span id="result"></span>
+		<script>
+			var number = document.getElementById("num");
+			var res = document.getElementById("result");
+			function check(){
+			if ( number.value.length !=  5 ){
+			alert("Enter a five digit number"); 
+			return;
+			}
+			var num = parseInt(number.value);
+			var copy = num;
+			var rev = 0;
+			var rem = 0;
+			while(copy > 0) {
+        			rem = copy % 10;
+        			rev = rem + rev * 10;
+        			copy = Math.floor(copy / 10);
+    			}
+			if( num == rev){
+			res.innerHTML = "PALINDROME" ;
+			}else{
+			res.innerHTML = "NOT A PALINDROME";
+			 }
+			}
+		</script>	
+	</body>
+</html>
