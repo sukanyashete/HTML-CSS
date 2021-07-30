@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title> JavaScript Calculator </title>
+        <style>
+
+            * {
+            box-sizing: border-box;
+            font-size: 20px;
+            }
+
+            .container {
+            width: 600px;
+            }
+
+            .row:after {
+            content: "";
+            display: table;
+            clear: both;
+            }
+
+            #calc{
+            width: 100%;
+            height: 80px;
+            padding: 12px;
+            font-size: 30px;
+            text-align: right;
+            border: 1px solid #cecece;
+            border-radius: 6px;
+            }
+
+            [class*="col-"] {
+            float: left;
+            padding: 5px;
+            }
+
+            .col-100 {
+            width: 100%;
+            }
+
+            .col-25 {
+            width: 25%;
+            }
+        
+            .space{
+            width: 100%;
+            height: 60px;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background-color: #f1f1f1;
+            }
+
+            .op {
+            background-color: #cacaca;
+            }
+
+            .op:active {
+            background-color: #929292;
+            }
+
+            .eq {
+                background-color: #2992e7;
+            }
+
+            .eq:active {
+                background-color: #1d649e;
+            }
+
+           
+        </style>
+    </head>
+
+    <body>
+        <form name = "form1">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-100">
+                    <input id = "calc" type ="text" name = "answer" readonly> </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                    <input class= "space" type = "button" value = "7" onclick = "form1.answer.value += '7' "> </div>
+                    <div class="col-25">
+                    <input class= "space" type = "button" value = "8" onclick = "form1.answer.value += '8' "> </div>
+                    <div class="col-25">
+                    <input class= "space" type = "button" value = "9" onclick = "form1.answer.value += '9' "> </div>
+                    <div class="col-25">
+                    <input class= "space op" type = "button" value = "&#247" onclick = "form1.answer.value += '/' "> </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                    <input class= "space" type = "button" value = "4" onclick = "form1.answer.value += '4' "></div>
+                    <div class="col-25">
+                    <input class= "space" type = "button" value = "5" onclick = "form1.answer.value += '5' "></div>
+                    <div class="col-25">
+                    <input class= "space" type = "button" value = "6" onclick = "form1.answer.value += '6' "></div>
+                    <div class="col-25">
+                    <input class= "space op" type = "button" value = "x" onclick = "form1.answer.value += '*' "></div>
+                </div>
+        
+                <div class="row">
+                    <div class="col-25">
+                    <input class= "space" type = "button" value = "1" onclick = "form1.answer.value += '1' "></div>
+                    <div class="col-25">
+                    <input class= "space" type = "button" value = "2" onclick = "form1.answer.value += '2' "></div>
+                    <div class="col-25">
+                    <input class= "space" type = "button" value = "3" onclick = "form1.answer.value += '3' "></div>
+                    <div class="col-25">
+                    <input class= "space op" type = "button" value = "-" onclick = "form1.answer.value += '-' "></div>
+                </div>
+        
+                <div class="row">
+                    <div class="col-25">
+                    <input class= "space" type = "button" value = "0" onclick = "form1.answer.value += '0' "></div>
+                    <div class="col-25">
+                    <input class= "space" type = "button" value = "." onclick = "form1.answer.value += '.' "></div>
+                    <div class="col-25">
+                    <input class= "space eq" type = "button" value = "=" onclick = "form1.answer.value = eval(form1.answer.value) "></div>
+                    <div class="col-25">
+                    <input class= "space op" type = "button" value = "+" onclick = "form1.answer.value += '+' "></div>
+                </div>
+
+            </div>
+        </form>
+    </body>
+
+</html>
+
+ 
