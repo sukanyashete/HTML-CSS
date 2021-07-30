@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Javascript DOM Tree </title>
+    </head>
+
+    <body style="font-weight:bold;padding-top:20px;text-align: center;" }>
+
+        <div class="tree"> INSERT NEW ELEMENT &nbsp; <input type="button" onclick="add()" value="click here"></div><br>
+        <div class="delete">DELETE THIS ELEMENT &nbsp; <input type="button" onclick="del()" value="delete"></div><br>
+        <div class="replace">REPLACE THIS ELEMENT &nbsp; <input type="button" onclick="replace()" value="replace"></div><br>
+        <div id="findme">FIND AN ELEMENT &nbsp; <input type="button" onclick="search()" value="find"></div>
+
+        <script>
+
+            const body = document.querySelector("body");
+    
+            function add() {
+                const tree = body.querySelector(".tree");
+                var node = document.createElement("p");
+                var text = document.createTextNode("done");
+                node.appendChild(text);
+                tree.appendChild(node);
+            }
+    
+            function del(){
+                const ele = document.querySelector(".delete");
+                body.removeChild(ele);
+            }
+    
+            function replace(){
+                const oldele = body.querySelector(".replace");
+                var newele = document.createElement("h1");
+                var neweletxt = document.createTextNode("Element Replaced !");
+                newele.appendChild(neweletxt);
+                body.replaceChild(newele, oldele);
+            }
+    
+            function search(){
+                const found = document.getElementById("findme");
+                found.innerHTML = "Found";
+            }
+
+        </script>
+
+    </body>
+
+</html>
