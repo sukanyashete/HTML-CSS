@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Javascript Webpage</title>
+        <style>
+            html,body {
+                height: 100%;
+            }
+
+            .e1 {
+                background-color: #143210;
+                color: white;
+                height: 100px;
+                margin-bottom: 10px;
+                padding-top:20px;
+                text-align: center;
+            }
+
+            .e2 {
+                background-color: burlywood;
+                height: 100px;
+                padding-top:20px;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            .e3 {
+                background-color: #661234;
+                color: white;
+                height: 100px;
+                padding-top:20px;
+                text-align: center;
+            }
+        </style>
+
+    </head>
+
+<body onclick="clicking()">
+    <div class="e1" id="1" onclick="clicking(this.id)">E L E M E N T - 1</div>
+    <div class="e2" id="2" onclick="clicking(this.id)">E L E M E N T - 2</div>
+    <div class="e3" id="3" onclick="clicking(this.id)">E L E M E N T - 3</div>
+    <script>
+        function clicking(n){
+            if (n == null) {
+                if (event.shiftKey) {
+                    alert("Shift Key Pressed");
+                } else if(!event.ctrlKey){
+                    alert("Clicked");
+                }
+            }
+            else{
+                if(event.ctrlKey){
+                    alert("element " + n + " clicked");
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
